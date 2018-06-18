@@ -11,7 +11,7 @@ import re
 
 #创建txt文件
 file = open('警花相伴.txt', 'w', encoding='utf-8')
-target_url = 'http://www.xiaoqiangxs.cc/3/3023/'
+target_url = 'https://www.48rx.net/1_1834/'
 #User-Agent
 head = {}
 head['User-Agent'] = 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166  Safari/535.19'
@@ -29,7 +29,7 @@ download_soup = BeautifulSoup(str(chapters), 'lxml')
 chapter_list = download_soup.find_all("a", attrs={"style": "", "href": re.compile(r"/.*\.html")})  
 for x in chapter_list:  
     file_url = x.attrs["href"]  # 获取a标签中href属性里面的值
-    download_url="http://www.xiaoqiangxs.cc/" + file_url
+    download_url="https://www.48rx.net/" + file_url
     
     download_req = request.Request(url = download_url, headers = head)
     download_response = request.urlopen(download_req)
